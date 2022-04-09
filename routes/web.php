@@ -17,8 +17,13 @@ use App\Http\Controllers\adminController;
 */
 
 Route::get('/', function () {
+    return view('main');
+});
+
+Route::get('/home', function () {
     return view('home');
 });
+
 
 Route::get('/login', function () {
     return view('auth/login');
