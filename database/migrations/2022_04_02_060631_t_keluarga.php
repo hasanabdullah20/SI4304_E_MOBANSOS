@@ -15,6 +15,7 @@ class TKeluarga extends Migration
     {
         //
         Schema::create('t_keluarga', function (Blueprint $table) {
+            $table->increments('id_keluarga');
             $table->bigInteger('nik_keluarga');
             $table->string('email', 50);
             $table->string('password', 500);
@@ -22,8 +23,6 @@ class TKeluarga extends Migration
             $table->string('nohp', 50);
             $table->string('alamat', 500);
             $table->boolean('is_validated');
-            $table->bigInteger('id_rt');
-            $table->bigInteger('id_pendaftaran_rt');
             $table->date('updated_at');
             $table->date('created_at');
         });

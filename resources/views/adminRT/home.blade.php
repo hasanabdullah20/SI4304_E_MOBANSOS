@@ -64,22 +64,57 @@
                     style="background-color: rgb(40, 86, 146); color: white"
                 >
                     <p class="h1 mt-5 ml-5 pt-3" style="font-size: 35px">
-                        Penambahan Akun RT
+                        List Join RT
                     </p>
                     <p class="h5 mt-3 ml-5" style="font-size: 20px">
-                        Click disini untuk menambahkan RT Baru!
+                        Click disini untuk menerima Warga baru di RT anda1
                     </p>
                     <div>
                         <center>
                             <a
-                                href="/tambahRT"
+                                href="/listJoinRT"
                                 class="mt-3 btn btn-success ml-3 w-75 mb-3"
                                 style="background-color: rgb(72, 180, 227)"
                             >
-                                Tambah RT
+                                Acc Join RT
                             </a>
                         </center>
                     </div>
+                </div>
+                <div class="ml-5 mt-3">
+                    <p class="h1 ml-5" style="font-size: 35px">
+                        Data Bansos saat ini
+                    </p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">ID Keluarga</th>
+                                <th scope="col">Jenis Bansos</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if(count($dataBansos) < 1)
+                            <tr>
+                                <th scope="row">Belum ada data...</th>
+                            </tr>
+                            @else @foreach($dataBansos as $data)
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{{ $data->id_request }}</td>
+                                <td>{{ $data->jenis_bansos }}</td>
+                                <td>{{ $data->status }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="/accBansos"
+                                        >Terima Request Bansos</a
+                                    >
+                                </td>
+                            </tr>
+                            @endforeach @endif
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

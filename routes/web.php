@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\rtController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\wargaController;
+use App\Http\Controllers\requestBansos;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,8 @@ Route::get('/register', function () {
 });
 
 Route::post('/registerKeluarga', [authController::class, 'registrasiKeluarga']);
+\
+Route::get('/logoutKeluarga', [authController::class, 'logoutKeluarga']);
 
 Route::get('/cariRT', function () {
     return view('rt/cari');
@@ -38,19 +42,34 @@ Route::get('/cariRT', function () {
 
 Route::post('/cariRT', [rtController::class, 'cariRT']);
 
-Route::get('/joinRT/{idrt}', function () {
-    return view('rt/join');
-});
+// Route::get('/joinRT/{idrt}', function () {
+//     return view('rt/join');
+// });
+
+Route::get('/joinRT/{idrt}', [rtController::class, 'joinRtForm']);
 
 Route::post('/registRTWarga', [rtController::class, 'joinRT']);
 
 // Route::get('/pilihRT', [rtController::class, 'pilihRT']);
+
+Route::get('/requestWarga', [wargaController::class, 'getData']);
+
+Route::post('/submitRequest', [requestBansos::class, 'requestBansos']);
+
+//RT Route
+Route::get('/homeRT', [requestBansos::class, 'accBansosRT']);
+
+Route::get('/listJoinRT', [rtController::class, 'getListJoin']);
+
+Route::get('/accJoinRT/{idp}', [rtController::class, 'accJoinRT']);
 
 //ADMIN ROUTE
 
 Route::get('/admin', function () {
     return view('admin/homeAdmin');
 });
+
+// Route::get('/admin', [requestBansos::class, 'accBansosRT']);
 
 Route::get('/tambahRT', function () {
     return view('admin/tambahRT');

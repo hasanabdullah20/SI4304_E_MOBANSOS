@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Join RT</title>
+        <title>Request Bansos</title>
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -61,49 +61,74 @@
             <div class="col-sm-9">
                 <div class="ml-5">
                     <p class="h1 mt-5" style="font-size: 35px">
-                        Daftarkan RT baru
+                        Request Bansos
                     </p>
                     <p class="h5 mt-3" style="font-size: 20px">
-                        Silahkan isi form dibawah untuk mendaftarkan RT baru
+                        Silahkan isi form dibawah untuk melakukan Request Bansos
                     </p>
-                    <form action="/registRTWarga" method="POST" enctype="multipart/form-data">
-                        @csrf
+                    <form action="/submitRequest" method="POST">
+                        @csrf @foreach($dataWarga as $data)
+                        @foreach($detailWarga as $detail)
                         <div class="form-group">
-                            <label for="jumlah">Jumlah Anggota Keluarga</label>
-                            <input type="hidden" value="{{ $rt }}" name="rt" readonly>
+                            <label for="nama">Nama Kepala Keluarga</label>
+                            <input
+                                type="hidden"
+                                value="{{ $detail->id_rt }}"
+                                name="rt"
+                                readonly
+                            />
                             <input
                                 class="form-control"
                                 type="text"
-                                name="jumlah"
-                                id="jumlah"
-                                placeholder="Masukan Jumlah Anggota Keluarga"
+                                name="nama"
+                                id="nama"
+                                value="{{ $data->nama_kepala_keluarga }}"
+                                readonly
                             />
                         </div>
                         <div class="form-group">
-                            <label for="alamat">Alamat Lengkap</label>
+                            <label for="nik">NIK Kepala Keluarga</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="nik"
+                                id="nik"
+                                value="{{ $data->nik_keluarga }}"
+                                readonly
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
                             <textarea
                                 class="form-control"
+                                type="text"
                                 name="alamat"
                                 id="alamat"
-                                placeholder="Masukan Alamat Lengkap"
-                            ></textarea>
+                                readonly
+                                >{{ $detail->alamat }}</textarea
+                            >
                         </div>
                         <div class="form-group">
-                            <label for="kk">Kartu Keluarga</label>
-                            <input
-                                type="file"
+                            <label for="inputState">Jenis Bantuan Sosial</label>
+                            <select
+                                id="inputState"
                                 class="form-control"
-                                name="kk"
-                                id="kk"
-                            />
+                                name="jenis"
+                            >
+                                <option value="sandang">Sandang</option>
+                                <option value="pangan">Pangan</option>
+                                <option value="obat">Obat obatan</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="ktp">KTP Kepala Keluarga</label>
+                            <label for="nohp">Nomer yang bisa dihubungi</label>
                             <input
-                                type="file"
                                 class="form-control"
-                                name="ktp"
-                                id="ktp"
+                                type="text"
+                                name="nohp"
+                                id="nohp"
+                                value="{{ $data->nohp }}"
+                                readonly
                             />
                         </div>
                         <div class="form-group">
@@ -112,9 +137,10 @@
                                 type="submit"
                                 style="width: 25%"
                             >
-                                Daftar
+                                Register
                             </button>
                         </div>
+                        @endforeach @endforeach
                     </form>
                 </div>
             </div>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 use App\Models\t_keluarga;
+use App\Models\t_rt;
 
 class authController extends Controller
 {
@@ -29,33 +31,59 @@ class authController extends Controller
     }
 
     public function loginKeluarga(){
+        session_start();
         $email = request('email');
         $pass = request('password');
         $findUser = t_keluarga::where('email', $email)->get();
+        $findRt = t_rt::where('email_ketua', $email)->get();
 
+        $resultrt = json_decode(json_encode($findRt), true);
         $resultUser = json_decode(json_encode($findUser), true);
 
-        if(count($resultUser) > 0){
-            $passData = $resultUser[0]['password'];
+        if(count($resultrt) > 0){
+            $passData = $resultrt[0]['password'];
             if(Hash::check(request('password'), $passData)){
-                if($resultUser[0]['email'] == 'admin@mail.com'){
-                    session_start();
-                    $_SESSION['nik'] = $resultUser[0]['nik_keluarga'];
-                    $_SESSION['email'] = $resultUser[0]['email'];
-                    $_SESSION['nama_kepala_keluarga'] = $resultUser[0]['nama_kepala_keluarga'];
-                    $_SESSION['role'] = 'admin';
-                    return redirect('/admin');
-                }else{
-                    session_start();
-                    $_SESSION['nik'] = $resultUser[0]['nik_keluarga'];
-                    $_SESSION['email'] = $resultUser[0]['email'];
-                    $_SESSION['nama_kepala_keluarga'] = $resultUser[0]['nama_kepala_keluarga'];
-                    $_SESSION['role'] = 'warga';
-                    return redirect('/');
-                }
+                // $_SESSION["id_keluarga"] = $resultUser[0]['id_keluarga'];
+                // $_SESSION["NIK"] = $resultUser[0]['nik_keluarga'];
+                // $_SESSION['email'] = $resultUser[0]['email'];
+                // $_SESSION['nama_kepala_keluarga'] = $resultUser[0]['nama_kepala_keluarga'];
+                $_SESSION['role'] = 'rt';
+                return redirect('/homeRT');
             }
         }else{
-            return redirect('/?gagal=true');
+            if(count($resultUser) > 0){
+                $passData = $resultUser[0]['password'];
+                if(Hash::check(request('password'), $passData)){
+                    if($resultUser[0]['email'] == 'admin@mail.com'){
+                        $_SESSION['nik'] = $resultUser[0]['nik_keluarga'];
+                        $_SESSION['email'] = $resultUser[0]['email'];
+                        $_SESSION['nama_kepala_keluarga'] = $resultUser[0]['nama_kepala_keluarga'];
+                        $_SESSION['role'] = 'admin';
+                        return redirect('/admin');
+                    }else{
+                        // echo($resultUser[0]['nik_keluarga']);
+                        // $_SESSION['asd'] = 'hello';
+                        $_SESSION["id_keluarga"] = $resultUser[0]['id_keluarga'];
+                        $_SESSION["NIK"] = $resultUser[0]['nik_keluarga'];
+                        $_SESSION['email'] = $resultUser[0]['email'];
+                        $_SESSION['nama_kepala_keluarga'] = $resultUser[0]['nama_kepala_keluarga'];
+                        $_SESSION['role'] = 'warga';
+                        return redirect('/');
+                    }
+                }
+            }else{
+                return redirect('/?gagal=true');
+            }
         }
+    }
+
+    public function logoutKeluarga() {
+        session_start();
+
+        session_unset();
+
+        session_destroy();
+
+        return redirect('/login');
     }
 }

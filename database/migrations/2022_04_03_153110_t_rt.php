@@ -15,7 +15,7 @@ class TRt extends Migration
     {
         //
         Schema::create('t_rt', function (Blueprint $table) {
-            $table->bigIncrements('id_rt');
+            $table->increments('id_rt');
             $table->string('kota', 50);
             $table->string('kecamatan', 255);
             $table->string('kelurahan', 255);

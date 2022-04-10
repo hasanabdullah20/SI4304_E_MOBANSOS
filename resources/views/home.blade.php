@@ -53,7 +53,7 @@
                 >
                 <a
                     class="btn btn-danger mt-3 ml-5"
-                    href="/logout"
+                    href="/logoutKeluarga"
                     style="width: 65%"
                     >Logout</a
                 >
@@ -73,7 +73,7 @@
                     <div>
                         <center>
                             <a
-                                href="/rekap"
+                                href="/requestWarga"
                                 class="mt-3 btn btn-success ml-3 w-75 mb-3"
                                 style="background-color: rgb(72, 180, 227)"
                             >

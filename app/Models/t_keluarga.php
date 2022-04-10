@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\t_pendaftaran_rt;
 
 class t_keluarga extends Model
 {
@@ -19,7 +20,9 @@ class t_keluarga extends Model
         'nohp',
         'alamat',
         'is_validated',
-        'id_rt',
-        'id_pendaftaran_rt'
     ];
+
+    // public function keluarga() {
+    //     return $this->hasOne(t_pendaftaran_rt::class, 'foreign_key');
+    // }
 }
