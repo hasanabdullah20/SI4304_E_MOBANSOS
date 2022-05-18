@@ -80,3 +80,11 @@ Route::post('/registRT', [adminController::class, 'registRT']);
 Route::get('/history', function(){
     return view('history/historyBantuan');
 });
+Route::get('/profil', function () {
+    return view('profil/profil');
+});
+
+//bukti evidence form
+Route::get('/formevidence', function () {
+    return view('evidence/formevidence');
+});
