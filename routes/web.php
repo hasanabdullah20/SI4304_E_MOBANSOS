@@ -81,3 +81,7 @@ Route::get('/profil', function () {
     return view('profil/profil');
 });
 
+//bukti evidence form
+Route::get('/formevidence', function () {
+    return view('evidence/formevidence');
+});
