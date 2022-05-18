@@ -77,6 +77,10 @@ Route::get('/tambahRT', function () {
 
 Route::post('/registRT', [adminController::class, 'registRT']);
 
+Route::get('/profil', function () {
+    return view('profil/profil');
+});
+
 //bukti evidence form
 Route::get('/formevidence', function () {
     return view('evidence/formevidence');
