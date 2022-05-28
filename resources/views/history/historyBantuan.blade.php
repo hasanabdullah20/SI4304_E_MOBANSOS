@@ -68,41 +68,21 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Tanggal</th>
-                        <th scope="col">Keterangan</th>
+                        <th scope="col">Jenis Bansos</th>
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <?php $count = 1; ?>
+                      @foreach($dataHistory as $data)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>10-06-2022</td>
-                        <td>Permintaan bantuan sosial</td>
-                        <td>selesai</td>
+                        <th scope="row">{{ $count }}</th>
+                        <td>{{ $data->created_at }}</td>
+                        <td>{{ $data->jenis_bansos }}</td>
+                        <td>{{ $data->status }}</td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td >30-05-2022</td>
-                        <td>Permintaan bantuan sosial</td>
-                        <td>diterima oleh admin RT</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td >28-05-2022</td>
-                        <td>Permintaan bantuan sosial</td>
-                        <td>diproses oleh admin RT</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td >25-05-2022</td>
-                        <td>Permintaan bantuan sosial</td>
-                        <td>diterima admin website</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td >20-05-2022</td>
-                        <td>Permintaan bantuan sosial</td>
-                        <td>di proses admin website</td>
-                      </tr>
+                      <?php $count++; ?>
+                      @endforeach
                     </tbody>
                   </table>
             </div>

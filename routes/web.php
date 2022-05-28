@@ -77,9 +77,8 @@ Route::get('/tambahRT', function () {
 Route::post('/registRT', [adminController::class, 'registRT']);
 
 #fitur History
-Route::get('/history', function(){
-    return view('history/historyBantuan');
-});
+Route::get('/history', [wargaController::class, 'getHistory']);
+
 Route::get('/profil', function () {
     return view('profil/profil');
 });

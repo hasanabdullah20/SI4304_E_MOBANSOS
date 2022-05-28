@@ -52,6 +52,12 @@
                     >Profil</a
                 >
                 <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/history"
+                    style="width: 65%"
+                    >History</a
+                >
+                <a
                     class="btn btn-danger mt-3 ml-5"
                     href="/logoutKeluarga"
                     style="width: 65%"
