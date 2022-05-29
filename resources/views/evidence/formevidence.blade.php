@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join RT</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -30,43 +30,42 @@
             </center>
             <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
             <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
-            <a class="btn btn-danger mt-3 ml-5" href="/logout" style="width: 65%">Logout</a>
+            <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>
         </div>
-        <div class="col-sm-9">
-            <div class="ml-5">
+
+        <div class="col-sm-9 h-25 ml-5 mt-3 w-100 rounded" style="background-color: rgb(40, 86, 146); color: white">
+
+            <div class="ml-5 mr-5">
                 <p class="h1 mt-5" style="font-size: 35px">
-                    Daftarkan RT baru
+                    Bukti Penerimaan Bansos
                 </p>
                 <p class="h5 mt-3" style="font-size: 20px">
-                    Silahkan isi form dibawah untuk mendaftarkan RT baru
+                    Jika telah menerima bansos, isi form berikut untuk mengkonfirmasi penerimaan bansos!
                 </p>
-                <form action="/registRTWarga" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <label for="jumlah">Jumlah Anggota Keluarga</label>
-                        <input type="hidden" value="{{ $rt }}" name="rt" readonly>
-                        <input class="form-control" type="text" name="jumlah" id="jumlah"
-                            placeholder="Masukan Jumlah Anggota Keluarga" />
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat Lengkap</label>
-                        <textarea class="form-control" name="alamat" id="alamat"
-                            placeholder="Masukan Alamat Lengkap"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="kk">Kartu Keluarga</label>
-                        <input type="file" class="form-control" name="kk" id="kk" />
-                    </div>
-                    <div class="form-group">
-                        <label for="ktp">KTP Kepala Keluarga</label>
-                        <input type="file" class="form-control" name="ktp" id="ktp" />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit" style="width: 25%">
-                            Daftar
-                        </button>
-                    </div>
-                </form>
+                <div class="mt-5 mb-3">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama Penerima Bansos</label>
+                            <input type="text" class="form-control" id="nama">
+                        </div>
+                        <div class="mb-3">
+                            <label for="rt" class="form-label">Nama Ketua RT</label>
+                            <input type="text" class="form-control" id="rt">
+                        </div>
+                        <div>
+                            <label for="bukti" class="form-label">Evidence</label>
+                            <input type="file" class="form-control" id="bukti">
+                            <div class="form-text" style="font-size: 10px">Sertakan file bukti penerimaan bansos dalam
+                                bentuk gambar.</div>
+                        </div>
+                        <center>
+                            <button type="submit" class="btn btn-primary mt-3 ml-3 w-75 mb-3"
+                                style="background-color: rgb(72, 180, 227)">
+                                Submit
+                            </button>
+                        </center>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
