@@ -33,7 +33,7 @@ Route::get('/register', function () {
 });
 
 Route::post('/registerKeluarga', [authController::class, 'registrasiKeluarga']);
-\
+
 Route::get('/logoutKeluarga', [authController::class, 'logoutKeluarga']);
 
 Route::get('/cariRT', function () {
@@ -76,3 +76,7 @@ Route::get('/tambahRT', function () {
 });
 
 Route::post('/registRT', [adminController::class, 'registRT']);
+
+Route::get('/status', function () {
+    return view('status/statusbansos');
+});
