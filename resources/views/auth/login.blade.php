@@ -126,7 +126,7 @@
                 <div class="form-group">
                     <button class="btn btn-primary btn-block">Login</button>
                 </div>
-                <a class="already" href="/register">Belum punya akun ? Login disini.</a>
+                <a class="already" href="/register">Belum punya akun ? Register disini.</a>
             </form>
             <div class="image-holder"></div>
         </div>
