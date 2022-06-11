@@ -30,7 +30,7 @@
             </center>
             <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
             <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
-            <a class="btn btn-danger mt-3 ml-5" href="/logout" style="width: 65%">Logout</a>
+            <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>
         </div>
         <div class="col-sm-9">
             <div class="ml-5 h-25 ml-5 mt-3 w-100 rounded" style="background-color: rgb(40, 86, 146); color: white">
@@ -38,7 +38,7 @@
                     List Join RT
                 </p>
                 <p class="h5 mt-3 ml-5" style="font-size: 20px">
-                    Click disini untuk menerima Warga baru di RT anda1
+                    Click disini untuk menerima Warga baru di RT anda
                 </p>
                 <div>
                     <center>
@@ -74,7 +74,11 @@
                                 <td>{{ $data->jenis_bansos }}</td>
                                 <td>{{ $data->status }}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="/accBansos">Terima Request Bansos</a>
+                                    @if( $data->status == 'done')
+                                    <a class="btn btn-primary" href="/accBansos/{{ $data->id_request }}/{{ $data->status }}">Konfirmasi Bansos</a>
+                                    @else
+                                    <a class="btn btn-primary" href="/accBansos/{{ $data->id_request }}/{{ $data->status }}">Terima Request Bansos</a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach @endif

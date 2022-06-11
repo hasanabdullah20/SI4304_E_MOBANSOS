@@ -55,6 +55,8 @@ Route::get('/requestWarga', [wargaController::class, 'getData']);
 
 Route::post('/submitRequest', [requestBansos::class, 'requestBansos']);
 
+Route::get('/accBansos/{idBansos}/{status}', [requestBansos::class, 'terimaBansos']);
+
 //RT Route
 Route::get('/homeRT', [requestBansos::class, 'accBansosRT']);
 
@@ -83,7 +85,15 @@ Route::get('/profil', function () {
     return view('profil/profil');
 });
 
+Route::Get('/followUp', function () {
+    return view('history/followUp');
+});
+
 //bukti evidence form
-Route::get('/formevidence', function () {
+Route::get('/listBansos', [wargaController::class, 'getAllBansos']);
+
+Route::get('/formevidence/{idBansos}', function () {
     return view('evidence/formevidence');
 });
+
+Route::post('/submitEvidence', [wargaController::class, 'submitEvidence']);

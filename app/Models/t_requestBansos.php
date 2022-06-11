@@ -17,5 +17,6 @@ class t_requestBansos extends Model
         'tujuan_rt',
         'jenis_bansos',
         'status',
+        'bukti_terima'
     ];
 }

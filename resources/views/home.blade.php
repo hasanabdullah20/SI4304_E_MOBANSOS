@@ -58,6 +58,12 @@
                     >History</a
                 >
                 <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/listBansos"
+                    style="width: 65%"
+                    >Konfirmasi Bansos</a
+                >
+                <a
                     class="btn btn-danger mt-3 ml-5"
                     href="/logoutKeluarga"
                     style="width: 65%"
@@ -88,10 +94,29 @@
                         </center>
                     </div>
                 </div>
+                <div class="ml-5">
+                    <p class="h1 mt-5" style="font-size: 35px">
+                        Join RT
+                    </p>
+                    <p class="h5 mt-3" style="font-size: 20px">
+                        Anda saat ini belum Join RT, ayo join sekarang untuk melakukan request !
+                    </p>
+                    <div>
+                        <center>
+                            <a
+                                href="/listJoinRT"
+                                class="mt-3 btn btn-success ml-3 w-75 mb-3"
+                                style="background-color: rgb(72, 180, 227)"
+                            >
+                                Join RT
+                            </a>
+                        </center>
+                    </div>
+                </div>
             </div>
-@extends('layouts.main')
-
-@section('content')
+</body>
+</html>
+<!-- @section('content')
 <div class="container">
     <div class="row">
       <div class="col-sm-6">
@@ -107,4 +132,4 @@
       </div>
     </div>
 </div>
-@endsection
+@endsection -->

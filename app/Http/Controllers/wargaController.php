@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\t_pendaftaran_rt;
 use App\Models\t_keluarga;
 use App\Models\t_requestBansos;
+use Illuminate\Support\Facades\Storage;
+
 
 class wargaController extends Controller
 {
@@ -27,5 +29,24 @@ class wargaController extends Controller
         $getHistory = t_requestBansos::where('id_keluarga', $_SESSION['id_keluarga'])->get();
 
         return view('history/historyBantuan', ['dataHistory' => $getHistory]);
+    }
+
+    public function getAllBansos(){
+        session_start();
+
+        $getBansos = t_requestBansos::where('id_keluarga', $_SESSION['id_keluarga'])->where('status', '!=', 'done')->get();
+
+        return view('evidence/listBansos', ['dataBansos' => $getBansos]);
+    }
+
+    public function submitEvidence(Request $request){
+        $kk = request('bukti')->store('evidence-warga');
+
+        t_requestBansos::where('id_request', request('idBansos'))->update([
+            'status' => 'done',
+            'bukti_terima' => $kk
+        ]);
+
+        return redirect('/');
     }
 }

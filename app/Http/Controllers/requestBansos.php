@@ -18,7 +18,8 @@ class requestBansos extends Controller
             'id_rt' => request('rt'),
             'tujuan_rt' => '',
             'jenis_bansos' => request('jenis'),
-            'status' => 'Request sudah diterima oleh pihak RT'
+            'status' => 'diterima',
+            'bukti_terima' => '.jpg'
         ]);
 
         if($requestBansos){
@@ -30,8 +31,26 @@ class requestBansos extends Controller
     }
 
     public function accBansosRT(){
-        $getAllBansos = t_requestBansos::all();
+        $getAllBansos = t_requestBansos::where('status', '!=', 'selesai')->get();
 
         return view('adminRT/home', ['dataBansos' => $getAllBansos]);
+    }
+
+    public function terimaBansos($idBansos, $status){
+        if($status == 'diterima'){
+            $updateBansos = t_requestBansos::where('id_request', $idBansos)
+                            ->update([
+                                'status' => 'dikonfirmasi'
+                            ]);
+            
+            return redirect('/homeRT');
+        }else if($status == 'done'){
+            $updateBansos = t_requestBansos::where('id_request', $idBansos)
+            ->update([
+                'status' => 'selesai'
+            ]);
+
+            return redirect('/homeRT');
+        }
     }
 }
