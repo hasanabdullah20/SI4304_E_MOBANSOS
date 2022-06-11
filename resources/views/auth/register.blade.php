@@ -131,7 +131,7 @@
                         Register
                     </button>
                 </div>
-                <a class="already" href="/login">You already have an account? Login here.</a>
+                <a class="already" href="/login">Sudah memiliki akun? Login disini.</a>
             </form>
             <div class="image-holder"></div>
         </div>
