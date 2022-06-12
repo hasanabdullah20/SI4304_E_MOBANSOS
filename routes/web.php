@@ -33,10 +33,7 @@ Route::get('/register', function () {
 });
 
 Route::post('/registerKeluarga', [authController::class, 'registrasiKeluarga']);
-<<<<<<< HEAD
 
-=======
->>>>>>> dcfd9f0224d111f8936c3b87ef878e8697ad6183
 Route::get('/logoutKeluarga', [authController::class, 'logoutKeluarga']);
 
 Route::get('/cariRT', function () {
@@ -81,7 +78,7 @@ Route::get('/tambahRT', function () {
 Route::post('/registRT', [adminController::class, 'registRT']);
 
 Route::get('/status', function () {
-    return view('status/statusbansos');
+    return view('status/statusbansos');});
 #fitur History
 Route::get('/history', function(){
     return view('history/historyBantuan');
