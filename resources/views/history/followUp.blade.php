@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Follow Up</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -29,29 +29,35 @@
                 <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
             </center>
             <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
-            <a class="btn btn-warning mt-3 ml-5" href="/profilRT" style="width: 65%">Profil</a>
-            <a class="btn btn-warning mt-3 ml-5" href="/batchRT" style="width: 65%">Batch</a>
-            <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>
+            <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
+            <a class="btn btn-danger mt-3 ml-5" href="/logout" style="width: 65%">Logout</a>
         </div>
         <div class="col-sm-9">
-            <div class="ml-5 h-25 ml-5 mt-3 w-100 rounded" style="background-color: rgb(40, 86, 146); color: white">
-                <p class="h1 mt-5 ml-5 pt-3" style="font-size: 35px">
-                    List Join RT
+            <div class="ml-5">
+                <p class="h1 mt-5" style="font-size: 35px">
+                    Follow Up Bantuan Sosial
                 </p>
-                <p class="h5 mt-3 ml-5" style="font-size: 20px">
-                    Click disini untuk menerima Warga baru di RT anda
-                </p>
-                <div>
-                    <center>
-                        <a href="/listJoinRT" class="mt-3 btn btn-success ml-3 w-75 mb-3"
-                            style="background-color: rgb(72, 180, 227)">
-                            Acc Join RT
-                        </a>
-                    </center>
-                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Jenis Bansos</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+
+
+
+
+
+
 </body>
 
 </html>

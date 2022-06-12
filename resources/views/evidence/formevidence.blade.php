@@ -43,7 +43,9 @@
                     Jika telah menerima bansos, isi form berikut untuk mengkonfirmasi penerimaan bansos!
                 </p>
                 <div class="mt-5 mb-3">
-                    <form>
+                    <form action="/submitEvidence" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" value="{{ request()->route('idBansos') }}" name="idBansos" readonly>
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Penerima Bansos</label>
                             <input type="text" class="form-control" id="nama">
@@ -54,7 +56,7 @@
                         </div>
                         <div>
                             <label for="bukti" class="form-label">Evidence</label>
-                            <input type="file" class="form-control" id="bukti">
+                            <input type="file" class="form-control" id="bukti" name="bukti">
                             <div class="form-text" style="font-size: 10px">Sertakan file bukti penerimaan bansos dalam
                                 bentuk gambar.</div>
                         </div>

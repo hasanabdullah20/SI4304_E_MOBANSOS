@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\t_rt;
+use App\Models\t_batch;
 use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
@@ -25,5 +26,21 @@ class adminController extends Controller
         ]);
 
         return redirect('/admin');
+    }
+
+    function getAllBatch(){
+        $dataBatch = t_batch::all();
+
+        return view('admin/batchAdmin', ['dataBatch' => $dataBatch]);
+    }
+
+    function tambahBatch(){
+        t_batch::create([
+            'nama_batch' => request('nama'),
+            'deadline' => request('deadline'),
+            'deskripsi' => request('desc')
+        ]);
+
+        return redirect('/batchAdmin');
     }
 }

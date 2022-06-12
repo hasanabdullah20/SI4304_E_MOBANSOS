@@ -30,7 +30,7 @@
             </center>
             <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
             <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
-            <a class="btn btn-danger mt-3 ml-5" href="/logout" style="width: 65%">Logout</a>
+            <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>
         </div>
         <div class="col-sm-9">
             <div class="ml-5">
@@ -44,16 +44,23 @@
                         <th scope="col">Tanggal</th>
                         <th scope="col">Jenis Bansos</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php $count = 1; ?>
-                      @foreach($dataHistory as $data)
+                      @foreach($dataBansos as $data)
                       <tr>
                         <th scope="row">{{ $count }}</th>
                         <td>{{ $data->created_at }}</td>
                         <td>{{ $data->jenis_bansos }}</td>
                         <td>{{ $data->status }}</td>
+                        <td>    
+                            <a class="btn btn-success" style="color: white"
+                                href="/formevidence/{{ $data->id_request }}">
+                                Konfirmasi Selesai
+                            </a>
+                        </td>
                       </tr>
                       <?php $count++; ?>
                       @endforeach
@@ -61,12 +68,6 @@
                 </table>
             </div>
         </div>
-
-
-
-
-
-
 </body>
 
 </html>
