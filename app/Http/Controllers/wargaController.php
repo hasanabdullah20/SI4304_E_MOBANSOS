@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\t_pendaftaran_rt;
 use App\Models\t_keluarga;
+use App\Models\t_batch;
 use App\Models\t_requestBansos;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,6 +22,12 @@ class wargaController extends Controller
         $getPendaftaranKeluarga = t_pendaftaran_rt::where('id_keluarga', $idWarga)->get();
 
         return view('warga/formRequest', ['dataWarga' => $getDataKeluarga, 'detailWarga' => $getPendaftaranKeluarga]);
+    }
+
+    function getAllBatch(){
+        $dataBatch = t_batch::all();
+
+        return view('warga/pilihBansos', ['dataBatch' => $dataBatch]);
     }
 
     public function getHistory(){

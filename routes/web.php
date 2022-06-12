@@ -51,11 +51,13 @@ Route::post('/registRTWarga', [rtController::class, 'joinRT']);
 
 // Route::get('/pilihRT', [rtController::class, 'pilihRT']);
 
-Route::get('/requestWarga', [wargaController::class, 'getData']);
+Route::get('/requestWarga/{idbatch}', [wargaController::class, 'getData']);
 
 Route::post('/submitRequest', [requestBansos::class, 'requestBansos']);
 
 Route::get('/accBansos/{idBansos}/{status}', [requestBansos::class, 'terimaBansos']);
+
+Route::get('/pilihBansos', [wargaController::class, 'getAllBatch']);
 
 //RT Route
 Route::get('/homeRT', [requestBansos::class, 'accBansosRT']);
@@ -76,7 +78,21 @@ Route::get('/tambahRT', function () {
     return view('admin/tambahRT');
 });
 
+Route::get('/batchRT', [rtController::class, 'pilihBatch']);
+
+Route::get('/lihatRequest/{idbatch}', [rtController::class, 'lihatRequestBatch']);
+
+Route::get('/profileRT', [rtController::class, 'profilRT']);
+
 Route::post('/registRT', [adminController::class, 'registRT']);
+
+Route::get('/batchAdmin', [adminController::class, 'getAllBatch']);
+
+Route::get('/tambahBatch', function() {
+    return view('admin/tambahBatch');
+});
+
+Route::post('/submitBatch', [adminController::class, 'tambahBatch']);
 
 #fitur History
 Route::get('/history', [wargaController::class, 'getHistory']);

@@ -84,12 +84,19 @@
                     </p>
                     <div>
                         <center>
-                            <a
+                            <!-- <a
                                 href="/requestWarga"
                                 class="mt-3 btn btn-success ml-3 w-75 mb-3"
                                 style="background-color: rgb(72, 180, 227)"
                             >
                                 Request
+                            </a> -->
+                            <a
+                                href="/pilihBansos"
+                                class="mt-3 btn btn-success ml-3 w-75 mb-3"
+                                style="background-color: rgb(72, 180, 227)"
+                            >
+                                Request Bansos
                             </a>
                         </center>
                     </div>

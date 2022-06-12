@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\t_pendaftaran_rt;
+use App\Models\t_requestBansos;
 use App\Models\t_keluarga;
+use App\Models\t_batch;
 use App\Models\t_rt;
 use Illuminate\Support\Facades\Storage;
 
@@ -56,5 +58,21 @@ class rtController extends Controller
         if($joinRT){
             return redirect('/');
         }
+    }
+
+    public function pilihBatch(){
+        $dataBatch = t_batch::all();
+
+        return view('adminRT/pilihBatch', ['dataBatch' => $dataBatch]);
+    }
+
+    public function lihatRequestBatch($idbatch){
+        $dataBatch = t_requestBansos::where('id_batch', $idbatch)->get();
+
+        $batch = t_batch::where('id_batch', $idbatch)->get();
+
+        $keluarga = t_keluarga::where('id_keluarga', $dataBatch[0]->id_keluarga)->get();
+
+        return view('adminRT/lihatBatch', ['dataBatch' => $dataBatch, 'batch' => $batch, 'keluarga' => $keluarga]);
     }
 }

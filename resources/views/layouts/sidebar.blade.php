@@ -13,6 +13,9 @@
             <a class="nav-link" href="/infaqAdmin" style="color: white">Profile</a>
           </li>
           <li class="nav-item" style="margin-left: 20px">
+            <a class="nav-link" href="/batchAdmin" style="color: white">Batch Bansos</a>
+          </li>
+          <li class="nav-item" style="margin-left: 20px">
             <a class="nav-link" href="/logoutKeluarga" style="color: white">Logout</a>
           </li>
         </ul>

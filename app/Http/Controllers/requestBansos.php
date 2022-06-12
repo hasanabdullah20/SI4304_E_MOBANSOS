@@ -16,6 +16,7 @@ class requestBansos extends Controller
         $requestBansos = t_requestBansos::create([
             'id_keluarga' => $idWarga,
             'id_rt' => request('rt'),
+            'id_batch' => request('idbatch'),
             'tujuan_rt' => '',
             'jenis_bansos' => request('jenis'),
             'status' => 'diterima',

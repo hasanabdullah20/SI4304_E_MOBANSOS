@@ -29,7 +29,8 @@
                 <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
             </center>
             <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
-            <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
+            <a class="btn btn-warning mt-3 ml-5" href="/profilRT" style="width: 65%">Profil</a>
+            <a class="btn btn-warning mt-3 ml-5" href="/batchRT" style="width: 65%">Batch</a>
             <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>
         </div>
         <div class="col-sm-9">
@@ -48,42 +49,6 @@
                         </a>
                     </center>
                 </div>
-            </div>
-            <div class="ml-5 mt-3">
-                <p class="h1 ml-5" style="font-size: 35px">
-                    Data Bansos saat ini
-                </p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">ID Keluarga</th>
-                            <th scope="col">Jenis Bansos</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if(count($dataBansos) < 1) <tr>
-                            <th scope="row">Belum ada data...</th>
-                            </tr>
-                            @else @foreach($dataBansos as $data)
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ $data->id_request }}</td>
-                                <td>{{ $data->jenis_bansos }}</td>
-                                <td>{{ $data->status }}</td>
-                                <td>
-                                    @if( $data->status == 'done')
-                                    <a class="btn btn-primary" href="/accBansos/{{ $data->id_request }}/{{ $data->status }}">Konfirmasi Bansos</a>
-                                    @else
-                                    <a class="btn btn-primary" href="/accBansos/{{ $data->id_request }}/{{ $data->status }}">Terima Request Bansos</a>
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach @endif
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
