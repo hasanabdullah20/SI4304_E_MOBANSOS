@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item" style="margin-left: 20px">
-            <a class="nav-link active" aria-current="page" href="/admin" style="color: white">Home Admin</a>
+            <a class="nav-link active" aria-current="page" href="/admin" style="color: white">Home</a>
           </li>
           <li class="nav-item" style="margin-left: 20px">
             <a class="nav-link" href="/infaqAdmin" style="color: white">Profile</a>
