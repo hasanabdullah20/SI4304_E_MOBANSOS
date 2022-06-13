@@ -21,17 +21,6 @@
 
 <body>
     <div class="row">
-        <div class="col-sm-2 sidebar vh-100" style="background-color: rgb(40, 86, 146); color: white">
-            <center>
-                <br />
-                <br />
-                <p class="h1" style="font-size: 35px"></p>
-                <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
-            </center>
-            <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
-            <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
-            <a class="btn btn-danger mt-3 ml-5" href="/logout" style="width: 65%">Logout</a>
-        </div>
         <div class="col-sm-9">
             <div class="ml-5">
                 <p class="h1 mt-5" style="font-size: 35px">

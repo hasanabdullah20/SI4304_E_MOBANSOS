@@ -75,4 +75,27 @@ class rtController extends Controller
 
         return view('adminRT/lihatBatch', ['dataBatch' => $dataBatch, 'batch' => $batch, 'keluarga' => $keluarga]);
     }
+
+    public function profilRT(){
+        session_start();
+
+        $id = $_SESSION['idrt'];
+
+        $profil = t_rt::where('id_rt', $id)->get();
+
+        $warga = t_pendaftaran_rt::where('id_rt',$id)->where('isacc', 1)->get();
+
+        for($i = 0; $i < count($warga); $i++){
+            $identitas = t_keluarga::where('id_keluarga', $warga[$i]->id_keluarga)->value('nama_kepala_keluarga');
+            $warga[$i]->nama_warga = $identitas;
+        }
+
+        return view('adminRT/profilRT', ['profil' => $profil, 'warga' => $warga]);
+    }
+
+    public function trackRecord($idwarga){
+        $warga = t_requestBansos::where('id_keluarga', $idWarga)->get();
+
+        return view('adminRT/trackRecord', ['warga' => $warga]);
+    }
 }
