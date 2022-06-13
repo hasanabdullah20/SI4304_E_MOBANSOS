@@ -82,9 +82,11 @@ Route::get('/batchRT', [rtController::class, 'pilihBatch']);
 
 Route::get('/lihatRequest/{idbatch}', [rtController::class, 'lihatRequestBatch']);
 
-Route::get('/profileRT', [rtController::class, 'profilRT']);
+Route::get('/profilRT', [rtController::class, 'profilRT']);
 
 Route::post('/registRT', [adminController::class, 'registRT']);
+
+Route::post('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
 
 Route::get('/batchAdmin', [adminController::class, 'getAllBatch']);
 

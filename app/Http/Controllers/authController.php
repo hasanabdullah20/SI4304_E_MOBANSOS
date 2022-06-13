@@ -43,10 +43,10 @@ class authController extends Controller
         if(count($resultrt) > 0){
             $passData = $resultrt[0]['password'];
             if(Hash::check(request('password'), $passData)){
-                // $_SESSION["id_keluarga"] = $resultUser[0]['id_keluarga'];
-                // $_SESSION["NIK"] = $resultUser[0]['nik_keluarga'];
-                // $_SESSION['email'] = $resultUser[0]['email'];
-                // $_SESSION['nama_kepala_keluarga'] = $resultUser[0]['nama_kepala_keluarga'];
+                $_SESSION['idrt'] = $resultrt[0]['id_rt'];
+                $_SESSION['nama'] = $resultrt[0]['nama_ketua'];
+                $_SESSION['kelurahan'] = $resultrt[0]['kelurahan'];
+                $_SESSION['kecamatan'] = $resultrt[0]['kecamatan'];
                 $_SESSION['role'] = 'rt';
                 return redirect('/homeRT');
             }

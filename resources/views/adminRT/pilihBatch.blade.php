@@ -50,7 +50,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $data->nama_batch }}</h5>
                 <p class="card-text">{{ $data->deskripsi }}</p>
-                <a href="/lihatRequest/{{ $data->id_batch }}" class="btn btn-primary">Request</a>
+                <a href="/lihatRequest/{{ $data->id_batch }}" class="btn btn-primary">Lihat Data</a>
             </div>
             </div>
             @endforeach

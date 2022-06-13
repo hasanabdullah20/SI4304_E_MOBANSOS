@@ -7,7 +7,7 @@
         <h3>Penambahan Akun RT</h3>
         <p class="text" style="font-size: 18px;">Klik disini untuk menambahkan RT baru</p>
         <div class="pt-3">
-            <a href="/requestWarga" class="btn btn-info d-block text-white">Tambah RT</a>
+            <a href="/tambahRT" class="btn btn-info d-block text-white">Tambah RT</a>
         </div>
       </div>
       <div class="col-sm-6">
