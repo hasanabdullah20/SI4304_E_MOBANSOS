@@ -114,4 +114,9 @@ Route::get('/formevidence/{idBansos}', function () {
     return view('evidence/formevidence');
 });
 
+//profileWarga
+Route::get('/profilWarga', function () {
+    return view('warga/profilWarga');
+});
+
 Route::post('/submitEvidence', [wargaController::class, 'submitEvidence']);
