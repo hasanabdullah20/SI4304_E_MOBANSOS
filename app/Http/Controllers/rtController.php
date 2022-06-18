@@ -98,4 +98,8 @@ class rtController extends Controller
 
         return view('adminRT/trackRecord', ['warga' => $warga]);
     }
+
+    public function lihatEvidence(){
+        return view('adminRT/lihatEvidence');
+    }
 }
