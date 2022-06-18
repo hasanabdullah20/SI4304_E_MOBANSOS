@@ -82,9 +82,13 @@ Route::get('/batchRT', [rtController::class, 'pilihBatch']);
 
 Route::get('/lihatRequest/{idbatch}', [rtController::class, 'lihatRequestBatch']);
 
-Route::get('/profileRT', [rtController::class, 'profilRT']);
+Route::get('/profilRT', [rtController::class, 'profilRT']);
 
 Route::post('/registRT', [adminController::class, 'registRT']);
+
+Route::get('/lihatEvidence', [rtController::class, 'lihatEvidence']);
+
+Route::post('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
 
 Route::get('/batchAdmin', [adminController::class, 'getAllBatch']);
 
@@ -110,6 +114,16 @@ Route::get('/listBansos', [wargaController::class, 'getAllBansos']);
 
 Route::get('/formevidence/{idBansos}', function () {
     return view('evidence/formevidence');
+});
+
+
+#Track Record
+Route::get('/trackRecord', function(){
+    return view('trackRecord/trackRecord');
+});
+//profileWarga
+Route::get('/profilWarga', function () {
+    return view('warga/profilWarga');
 });
 
 Route::post('/submitEvidence', [wargaController::class, 'submitEvidence']);

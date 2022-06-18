@@ -41,7 +41,7 @@
                 </center>
                 <a
                     class="btn btn-warning mt-5 ml-5"
-                    href="/admin"
+                    href="/"
                     style="width: 65%"
                     >Home</a
                 >
