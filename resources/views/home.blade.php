@@ -41,7 +41,7 @@
                 </center>
                 <a
                     class="btn btn-warning mt-5 ml-5"
-                    href="/admin"
+                    href="/"
                     style="width: 65%"
                     >Home</a
                 >
@@ -50,6 +50,18 @@
                     href="/infaqAdmin"
                     style="width: 65%"
                     >Profil</a
+                >
+                <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/history"
+                    style="width: 65%"
+                    >History</a
+                >
+                <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/listBansos"
+                    style="width: 65%"
+                    >Konfirmasi Bansos</a
                 >
                 <a
                     class="btn btn-danger mt-3 ml-5"
@@ -72,17 +84,59 @@
                     </p>
                     <div>
                         <center>
-                            <a
+                            <!-- <a
                                 href="/requestWarga"
                                 class="mt-3 btn btn-success ml-3 w-75 mb-3"
                                 style="background-color: rgb(72, 180, 227)"
                             >
                                 Request
+                            </a> -->
+                            <a
+                                href="/pilihBansos"
+                                class="mt-3 btn btn-success ml-3 w-75 mb-3"
+                                style="background-color: rgb(72, 180, 227)"
+                            >
+                                Request Bansos
+                            </a>
+                        </center>
+                    </div>
+                </div>
+                <div class="ml-5">
+                    <p class="h1 mt-5" style="font-size: 35px">
+                        Join RT
+                    </p>
+                    <p class="h5 mt-3" style="font-size: 20px">
+                        Anda saat ini belum Join RT, ayo join sekarang untuk melakukan request !
+                    </p>
+                    <div>
+                        <center>
+                            <a
+                                href="/listJoinRT"
+                                class="mt-3 btn btn-success ml-3 w-75 mb-3"
+                                style="background-color: rgb(72, 180, 227)"
+                            >
+                                Join RT
                             </a>
                         </center>
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
+</body>
 </html>
+<!-- @section('content')
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Selamat datang di Mobansos!</h3>
+        <p class="text" style="font-size: 18px;">Request Bansosmu sekarang, request akan diterima oleh RT
+            dan diteruskan ke pemerintah untuk segera dikirim!</p>
+        <div class="pt-3">
+            <a href="/requestWarga" class="btn btn-info d-block text-white">Request Bansos</a>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <img src="images/mobansos-home.png" style="margin-left: 70px">
+      </div>
+    </div>
+</div>
+@endsection -->
