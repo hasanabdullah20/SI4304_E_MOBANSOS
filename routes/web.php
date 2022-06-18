@@ -126,4 +126,8 @@ Route::get('/profilWarga', function () {
     return view('warga/profilWarga');
 });
 
+Route::get('/pengaduanWarga', function () {
+    return view('history/pengaduan');
+});
+
 Route::post('/submitEvidence', [wargaController::class, 'submitEvidence']);
