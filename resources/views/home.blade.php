@@ -47,7 +47,7 @@
                 >
                 <a
                     class="btn btn-warning mt-3 ml-5"
-                    href="/infaqAdmin"
+                    href="/profilWarga"
                     style="width: 65%"
                     >Profil</a
                 >

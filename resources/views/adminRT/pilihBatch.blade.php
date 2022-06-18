@@ -39,7 +39,7 @@
                     <p class="h1" style="font-size: 35px"></p>
                     <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
                 </center>
-            <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
+            <a class="btn btn-warning mt-5 ml-5" href="/homeRT" style="width: 65%">Home</a>
             <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
             <a class="btn btn-warning mt-3 ml-5" href="/batchRT" style="width: 65%">Batch</a>
             <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>

@@ -94,7 +94,7 @@ class rtController extends Controller
     }
 
     public function trackRecord($idwarga){
-        $warga = t_requestBansos::where('id_keluarga', $idWarga)->get();
+        $warga = t_requestBansos::where('id_keluarga', $idwarga)->get();
 
         return view('adminRT/trackRecord', ['warga' => $warga]);
     }

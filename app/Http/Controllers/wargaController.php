@@ -56,4 +56,34 @@ class wargaController extends Controller
 
         return redirect('/');
     }
+
+    public function getProfilWarga(Request $request){
+        session_start();
+        $profil = t_keluarga::where('id_keluarga', $_SESSION['id_keluarga'])->get();
+
+        $dataBansos = t_requestBansos::where('id_keluarga', $_SESSION['id_keluarga'])->get();
+
+        return view('warga/profilWarga', ['dataWarga' => $profil, 'dataBansos' => $dataBansos]);
+    }
+
+    public function editProfilWarga(Request $request){
+        session_start();
+        $nik = request('nik');
+        $email = request('email');
+        $nama = request('nama');
+        $nohp = request('nohp');
+        $alamat = request('alamat');
+
+        $edit = t_keluarga::where('id_keluarga', $_SESSION['id_keluarga'])->update([
+            'nik_keluarga' => $nik,
+            'email' => $email,
+            'nama_kepala_keluarga' => $nama,
+            'nohp' => $nohp,
+            'alamat' => $alamat
+        ]);
+
+        if($edit){
+            return redirect('/profilWarga');
+        }
+    }
 }

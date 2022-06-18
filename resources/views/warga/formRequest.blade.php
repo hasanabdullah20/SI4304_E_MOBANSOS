@@ -108,7 +108,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary" type="submit" style="width: 25%">
-                                Register
+                                Request
                             </button>
                         </div>
                     @endforeach

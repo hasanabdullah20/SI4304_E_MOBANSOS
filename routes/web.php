@@ -86,7 +86,7 @@ Route::get('/profilRT', [rtController::class, 'profilRT']);
 
 Route::post('/registRT', [adminController::class, 'registRT']);
 
-Route::post('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
+Route::get('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
 
 Route::get('/batchAdmin', [adminController::class, 'getAllBatch']);
 
@@ -115,8 +115,12 @@ Route::get('/formevidence/{idBansos}', function () {
 });
 
 //profileWarga
-Route::get('/profilWarga', function () {
-    return view('warga/profilWarga');
-});
+// Route::get('/profilWarga', function () {
+//     return view('warga/profilWarga');
+// });
+
+Route::get('/profilWarga', [wargaController::class, 'getProfilWarga']);
+
+Route::post('/editProfilWarga', [wargaController::class, 'editProfilWarga']);
 
 Route::post('/submitEvidence', [wargaController::class, 'submitEvidence']);
