@@ -114,6 +114,11 @@ Route::get('/formevidence/{idBansos}', function () {
     return view('evidence/formevidence');
 });
 
+
+#Track Record
+Route::get('/trackRecord', function(){
+    return view('trackRecord/trackRecord');
+});
 //profileWarga
 Route::get('/profilWarga', function () {
     return view('warga/profilWarga');
