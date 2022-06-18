@@ -86,6 +86,8 @@ Route::get('/profilRT', [rtController::class, 'profilRT']);
 
 Route::post('/registRT', [adminController::class, 'registRT']);
 
+Route::get('/lihatEvidence', [rtController::class, 'lihatEvidence']);
+
 Route::post('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
 
 Route::get('/batchAdmin', [adminController::class, 'getAllBatch']);
