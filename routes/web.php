@@ -88,3 +88,9 @@ Route::get('/profil', function () {
 Route::get('/formevidence', function () {
     return view('evidence/formevidence');
 });
+
+
+#Track Record
+Route::get('/trackRecord', function(){
+    return view('trackRecord/trackRecord');
+});
