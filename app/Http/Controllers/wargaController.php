@@ -7,6 +7,8 @@ use App\Models\t_pendaftaran_rt;
 use App\Models\t_keluarga;
 use App\Models\t_batch;
 use App\Models\t_requestBansos;
+use App\Models\t_evidence;
+
 use Illuminate\Support\Facades\Storage;
 
 
@@ -41,7 +43,7 @@ class wargaController extends Controller
     public function getAllBansos(){
         session_start();
 
-        $getBansos = t_requestBansos::where('id_keluarga', $_SESSION['id_keluarga'])->where('status', '!=', 'done')->get();
+        $getBansos = t_requestBansos::where('id_keluarga', $_SESSION['id_keluarga'])->where('status', '!=', 'terverifikasi')->get();
 
         return view('evidence/listBansos', ['dataBansos' => $getBansos]);
     }
@@ -51,6 +53,11 @@ class wargaController extends Controller
 
         t_requestBansos::where('id_request', request('idBansos'))->update([
             'status' => 'done',
+            'bukti_terima' => $kk
+        ]);
+
+        t_evidence::create([
+            'id_bansos' => request('idBansos'),
             'bukti_terima' => $kk
         ]);
 

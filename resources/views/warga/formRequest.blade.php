@@ -61,7 +61,7 @@
                         <input class="form-control" type="text" name="nohp" id="nohp" value="{{ $data->nohp }}" readonly />
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">Request</button>
                     </div>
                 @endforeach
             @endforeach

@@ -28,56 +28,14 @@
                 <p class="h1" style="font-size: 35px"></p>
                 <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
             </center>
-            <a
-                    class="btn btn-warning mt-5 ml-5"
-                    href="/"
-                    style="width: 65%"
-                    >Home</a
-                >
-                <a
-                    class="btn btn-warning mt-3 ml-5"
-                    href="/profilWarga"
-                    style="width: 65%"
-                    >Profil</a
-                >
-                <a
-                    class="btn btn-warning mt-3 ml-5"
-                    href="/history"
-                    style="width: 65%"
-                    >History</a
-                >
-                <a
-                    class="btn btn-warning mt-3 ml-5"
-                    href="/listBansos"
-                    style="width: 65%"
-                    >Konfirmasi Bansos</a
-                >
-                <a
-                    class="btn btn-danger mt-3 ml-5"
-                    href="/logoutKeluarga"
-                    style="width: 65%"
-                    >Logout</a
-                >        </div>
+            <a class="btn btn-warning mt-5 ml-5" href="/homeRT" style="width: 65%">Home</a>
+            <a class="btn btn-warning mt-3 ml-5" href="/profilRT" style="width: 65%">Profil</a>
+            <a class="btn btn-warning mt-3 ml-5" href="/batchRT" style="width: 65%">Batch</a>
+            <a class="btn btn-danger mt-3 ml-5" href="/logoutKeluarga" style="width: 65%">Logout</a>
+        </div>
         <div class="container">
             <div class="search" style="margin-top: 8%">
-                <h4 class="mr-1">Cari RT</h4>
-                <div class="row">
-                    <form action="/cariRT" method="POST" class="form-inline">
-                        @csrf
-                        <div class="form-group mb-2">
-                            <label for="staticEmail2" class="sr-only">Email</label>
-                            <input type="text" class="form-control w-100" name="kota" placeholder="Kota" />
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="kecamatan" class="sr-only">Kecamatan</label>
-                            <input type="text" class="form-control" id="kecamatan" name="kecamatan"
-                                placeholder="Kecamatan" />
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2">
-                            Cari RT
-                        </button>
-                    </form>
-                </div>
+                <h4 class="mr-1">List Join</h4>
                 @if(isset($listJoin)) @if(count($listJoin) < 1) <tr>
                     <th scope="row">Belum ada data...</th>
                     </tr>
@@ -103,6 +61,16 @@
                                     <td>{{ $data->kecamatan }}</td> -->
                                     <td>
                                         <a class="btn btn-success" style="color: white"
+                                            target="_blank"
+                                            href="{{ asset('storage/' . $data->ktp) }}">
+                                            Lihat KTP
+                                        </a>
+                                        <a class="btn btn-success" style="color: white"
+                                            target="_blank"
+                                            href="{{ asset('storage/' . $data->kk) }}">
+                                            Lihat KK
+                                        </a>
+                                        <a class="btn btn-primary" style="color: white"
                                             href="/accJoinRT/{{ $data->id_pendaftaran_rt }}">
                                             Join RT
                                         </a>

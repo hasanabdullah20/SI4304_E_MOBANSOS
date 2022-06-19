@@ -16,6 +16,9 @@
             <a class="nav-link" href="/batchAdmin" style="color: white">Batch Bansos</a>
           </li>
           <li class="nav-item" style="margin-left: 20px">
+            <a class="nav-link" href="/pengaduanAdmin" style="color: white">Lihat Pengaduan</a>
+          </li>
+          <li class="nav-item" style="margin-left: 20px">
             <a class="nav-link" href="/logoutKeluarga" style="color: white">Logout</a>
           </li>
         </ul>

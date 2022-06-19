@@ -65,7 +65,7 @@
         <div class="col-sm-9">
             <div class="ml-5">
                 <p class="h1 mt-5" style="font-size: 35px">
-                    History Bantuan Sosial
+                    Daftar Bansos yang belum dikonfirmasi
                 </p>
                 <table class="table">
                     <thead>
@@ -79,7 +79,10 @@
                     </thead>
                     <tbody>
                       <?php $count = 1; ?>
-                      @foreach($dataBansos as $data)
+                      @if(isset($dataBansos)) @if(count($dataBansos) < 1) <tr>
+                      <th scope="row">Belum ada data...</th>
+                      </tr>
+                      @else @foreach($dataBansos as $data)
                       <tr>
                         <th scope="row">{{ $count }}</th>
                         <td>{{ $data->created_at }}</td>
@@ -93,7 +96,7 @@
                         </td>
                       </tr>
                       <?php $count++; ?>
-                      @endforeach
+                      @endforeach @endif @endif
                     </tbody>
                 </table>
             </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\t_rt;
 use App\Models\t_batch;
+use App\Models\t_followup;
+
 use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
@@ -42,5 +44,11 @@ class adminController extends Controller
         ]);
 
         return redirect('/batchAdmin');
+    }
+
+    function lihatPengaduan(){
+        $dataPengaduan = t_followup::all();
+
+        return view('admin/lihatpengaduan', ['dataPengaduan' => $dataPengaduan]);
     }
 }

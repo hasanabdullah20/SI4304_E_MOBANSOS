@@ -29,74 +29,26 @@
     </head>
     <body>
     <div class="container">
-        <a href="/homeRT" class="btn btn-primary mt-5">Kembali</a>
+        <a href="/history" class="btn btn-primary mt-5">Kembali</a>
         <p class="h5 mt-3" style="font-size: 35px">Pengaduan Warga</p>
-        <div>
-            <div class="row">
-                <div class="col" style="">
-                    <div>
-                        <div class="row">
-                            <label for="nik" class="col-form-label">NIK</label>
-                        </div>
-                        <div class="row">
-                            <input type="text" id="nik" class="form-control">
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="row">
-                            <label for="nama" class="col-form-label">Nama</label>
-                        </div>
-                        <div class="row">
-                            <input type="text" id="nama" class="form-control">
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="row">
-                            <label for="email" class="col-form-label">Email</label>
-                        </div>
-                        <div class="row">
-                            <input type="text" id="email" class="form-control">
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="row">
-                            <label for="alamat" class="form-label">Alamat</label>
-                            <textarea class="form-control" id="alamt" rows="2"> </textarea>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="row">
-                            <label for="nohp" class="col-form-label">No HP</label>
-                        </div>
-                        <div class="row">
-                            <input type="text" id="nohp" class="form-control">
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="row">
-                            <label for="pengaduan" class="form-label">Deskripsi Pengaduan</label>
-                            <textarea class="form-control" id="pengaduan" rows="4"> </textarea>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="pengaduangambar" class="form-label">Gambar Pendukung</label>
-                        <input type="file" class="form-control" id="pengaduangambar" name="pengaduangambar">
-                    </div>
-
-                    <div class="mt-3">
-                        <div class="row d-grid gap-2 d-md-block">
-                            <button type="button" class="btn btn-success btn-sm">Submit</button>
-                        </div>
-                    </div>
+        <form action="/pengaduan" method="POST" enctype="multipart/form-data">
+            @csrf
+        <input type="hidden" class="form-control" value="{{ request()->route('idBansos') }}" name="idbansos">
+            <div>
+                <div>
+                    <label for="pengaduan" class="form-label">Deskripsi Pengaduan</label>
+                    <textarea class="form-control" id="pengaduan" rows="4" name="pengaduan"> </textarea>
                 </div>
             </div>
-        
-        </div>
+            <div class="mt-2">
+                <label for="pengaduangambar" class="form-label">Gambar Pendukung</label>
+                <input type="file" class="form-control" id="pengaduangambar" name="pengaduangambar">
+            </div>
+            <div class="mt-3">
+                <div class="d-grid gap-2 d-md-block">
+                    <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
     </body>

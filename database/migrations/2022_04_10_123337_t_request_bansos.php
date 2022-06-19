@@ -23,6 +23,8 @@ class TRequestBansos extends Migration
             $table->string('tujuan_rt');
             $table->string('jenis_bansos');
             $table->string('status');
+            $table->string('bukti_terima');
+            $table->string('id_batch');
             $table->date('updated_at');
             $table->date('created_at');
         });

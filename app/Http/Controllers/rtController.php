@@ -50,13 +50,19 @@ class rtController extends Controller
         return view('rt/listJoin', ['listJoin' => $getData]);
     }
 
+    public function getDaftarWarga(){
+        $getData = t_pendaftaran_rt::where('isacc', false || null)->get();
+
+        return view('rt/daftarWargaJoin', ['listJoin' => $getData]);
+    }
+
     public function accJoinRT($id){
         $joinRT = t_pendaftaran_rt::where('id_pendaftaran_rt', $id)->update([
             'isacc' => true
         ]);
 
         if($joinRT){
-            return redirect('/');
+            return redirect('/homeRT');
         }
     }
 
@@ -67,11 +73,15 @@ class rtController extends Controller
     }
 
     public function lihatRequestBatch($idbatch){
-        $dataBatch = t_requestBansos::where('id_batch', $idbatch)->get();
+        session_start();
+        $dataBatch = t_requestBansos::where('id_batch', $idbatch)->where('id_rt', $_SESSION['idrt'])->get();
 
         $batch = t_batch::where('id_batch', $idbatch)->get();
 
-        $keluarga = t_keluarga::where('id_keluarga', $dataBatch[0]->id_keluarga)->get();
+        for($i = 0; $i < count($dataBatch); $i++){
+            $keluarga = t_keluarga::where('id_keluarga', $dataBatch[$i]->id_keluarga)->get();
+            $dataBatch[$i]->nama_keluarga = t_keluarga::where('id_keluarga', $dataBatch[$i]->id_keluarga)->value('nama_kepala_keluarga');
+        }
 
         return view('adminRT/lihatBatch', ['dataBatch' => $dataBatch, 'batch' => $batch, 'keluarga' => $keluarga]);
     }

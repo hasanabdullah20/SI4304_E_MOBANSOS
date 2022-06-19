@@ -43,7 +43,7 @@
                 </p>
                 <div>
                     <center>
-                        <a href="/listJoinRT" class="mt-3 btn btn-success ml-3 w-75 mb-3"
+                        <a href="/wargaJoinRT" class="mt-3 btn btn-success ml-3 w-75 mb-3"
                             style="background-color: rgb(72, 180, 227)">
                             Acc Join RT
                         </a>

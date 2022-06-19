@@ -72,7 +72,11 @@ class authController extends Controller
                     }
                 }
             }else{
-                return redirect('/?gagal=true');
+                return redirect('/login');
+                echo '<script language="javascript">';
+                echo 'alert("Password salah")';
+                echo '</script>';
+                
             }
         }
     }

@@ -64,6 +64,8 @@ Route::get('/homeRT', [requestBansos::class, 'accBansosRT']);
 
 Route::get('/listJoinRT', [rtController::class, 'getListJoin']);
 
+Route::get('/wargaJoinRT', [rtController::class, 'getDaftarWarga']);
+
 Route::get('/accJoinRT/{idp}', [rtController::class, 'accJoinRT']);
 
 //ADMIN ROUTE
@@ -88,7 +90,7 @@ Route::post('/registRT', [adminController::class, 'registRT']);
 
 Route::get('/lihatEvidence', [rtController::class, 'lihatEvidence']);
 
-Route::post('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
+Route::get('/track-record/{idwarga}', [rtController::class, 'trackRecord']);
 
 Route::get('/batchAdmin', [adminController::class, 'getAllBatch']);
 
@@ -130,8 +132,16 @@ Route::get('/profilWarga', [wargaController::class, 'getProfilWarga']);
 
 Route::post('/editProfilWarga', [wargaController::class, 'editProfilWarga']);
 
-Route::get('/pengaduanWarga', function () {
+Route::get('/pengaduanWarga/{idBansos}', function () {
     return view('history/pengaduan');
 });
 
 Route::post('/submitEvidence', [wargaController::class, 'submitEvidence']);
+
+Route::get('/lihatEvidence/{idbansos}', [requestBansos::class, 'lihatEvidence']);
+
+Route::get('/verifikasiBansos/{idbansos}', [requestBansos::class, 'verifikasiBansos']);
+
+Route::post('/pengaduan', [requestBansos::class, 'pengaduan']);
+
+Route::get('/pengaduanAdmin', [adminController::class, 'lihatPengaduan']);
