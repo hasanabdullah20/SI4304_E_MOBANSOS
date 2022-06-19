@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,8 +39,8 @@
                 <center>
                     <br />
                     <br />
-                    <p class="h1" style="font-size: 35px"></p>
-                    <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
+                    <p class="h1" style="font-size: 35px">Halo {{ $_SESSION['nama_kepala_keluarga']}}</p>
+                    <!-- <img src="images/logo-lazis.png" alt="logo" class="mt-3" /> -->
                 </center>
                 <a
                     class="btn btn-warning mt-5 ml-5"
@@ -47,7 +50,7 @@
                 >
                 <a
                     class="btn btn-warning mt-3 ml-5"
-                    href="/infaqAdmin"
+                    href="/profilWarga"
                     style="width: 65%"
                     >Profil</a
                 >

@@ -28,17 +28,43 @@
                 <p class="h1" style="font-size: 35px"></p>
                 <img src="images/logo-lazis.png" alt="logo" class="mt-3" />
             </center>
-            <a class="btn btn-warning mt-5 ml-5" href="/admin" style="width: 65%">Home</a>
-            <a class="btn btn-warning mt-3 ml-5" href="/infaqAdmin" style="width: 65%">Profil</a>
-            <a class="btn btn-danger mt-3 ml-5" href="/logout" style="width: 65%">Logout</a>
-        </div>
+            <a
+                    class="btn btn-warning mt-5 ml-5"
+                    href="/"
+                    style="width: 65%"
+                    >Home</a
+                >
+                <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/profilWarga"
+                    style="width: 65%"
+                    >Profil</a
+                >
+                <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/history"
+                    style="width: 65%"
+                    >History</a
+                >
+                <a
+                    class="btn btn-warning mt-3 ml-5"
+                    href="/listBansos"
+                    style="width: 65%"
+                    >Konfirmasi Bansos</a
+                >
+                <a
+                    class="btn btn-danger mt-3 ml-5"
+                    href="/logoutKeluarga"
+                    style="width: 65%"
+                    >Logout</a
+                >        </div>
         <div class="col-sm-9">
             <div class="ml-5">
                 <p class="h1 mt-5" style="font-size: 35px">
                     Daftarkan RT baru
                 </p>
                 <p class="h5 mt-3" style="font-size: 20px">
-                    Silahkan isi form dibawah untuk mendaftarkan RT baru
+                    Silahkan isi form dibawah untuk melakukan pendataran masuk RT
                 </p>
                 <form action="/registRTWarga" method="POST" enctype="multipart/form-data">
                     @csrf

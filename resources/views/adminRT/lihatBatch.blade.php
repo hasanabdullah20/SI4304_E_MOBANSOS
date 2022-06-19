@@ -47,13 +47,17 @@
                 @foreach($dataBatch as $data)
                 <tr>
                 <th scope="row">{{ $count }}</th>
-                <td>{{ $keluarga[0]->nama_kepala_keluarga }}</td>
+                <td>{{ $data->nama_keluarga }}</td>
                 <td>{{ $data->jenis_bansos }}</td>
                 <td>{{ $data->status }}</td>
                 <td>    
                     <a class="btn btn-success" style="color: white"
-                        href="/formevidence/{{ $data->id_request }}">
+                        href="/verifikasiBansos/{{ $data->id_request }}">
                         Konfirmasi Selesai
+                    </a>  
+                    <a class="btn btn-primary" style="color: white" target="_blank"
+                        href="/lihatEvidence/{{ $data->id_request }}">
+                        Lihat Evidence
                     </a>
                 </td>
                 </tr>
