@@ -19,7 +19,12 @@ use App\Http\Controllers\requestBansos;
 */
 
 Route::get('/', function () {
-    return view('home');
+    session_start();
+    if(isset($_SESSION['role'])){
+        return view('home');
+    }else{
+        return redirect('/login');
+    }
 });
 
 Route::get('/login', function () {
