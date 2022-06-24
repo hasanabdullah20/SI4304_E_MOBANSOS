@@ -79,8 +79,6 @@ Route::get('/admin', function () {
     return view('admin/homeAdmin');
 });
 
-// Route::get('/admin', [requestBansos::class, 'accBansosRT']);
-
 Route::get('/tambahRT', function () {
     return view('admin/tambahRT');
 });
